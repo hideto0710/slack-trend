@@ -1,0 +1,9 @@
+release/
+bundle/
+
+### JetBrains template
+*.iml
+.idea/
+
+### Node template
+node_modules/
