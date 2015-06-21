@@ -9,7 +9,7 @@ slack_trend
 + viewのコンポーネントとしてReactをを使用
 + タスク自動化ツールにgulp.jsを使用
 
-![SlackTrend](リンクURL)
+![SlackTrend](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/demo/Screenshot_v0.1.0.png?raw=true)
 
 ##開発環境
 
