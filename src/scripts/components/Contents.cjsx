@@ -2,10 +2,13 @@
 moment = require 'moment'
 
 React = require 'react'
+materialUi = require 'material-ui'
 
 LineChart = require './contents/LineChart.cjsx'
 Documents = require './contents/Documents.cjsx'
 SlackConversation = require '../conversation/SlackConversation.coffee'
+
+Colors = materialUi.Styles.Colors
 
 CATEGORY_FORMAT = 'MM/DD HH:mm'
 
@@ -36,13 +39,18 @@ Contents = React.createClass(
             xAxis =
                 categories: categories
             series = [{data: seriesData}]
+            borderStylr =
+                display: 'block'
         else
             xAxis =
                 categories: []
             series = []
+            borderStylr =
+                display: 'none'
 
         <div style={componentStyle}>
             <LineChart xAxis={xAxis} series={series} onClickPoint={this._handleClickPoint}/>
+            <div className='borderBottom1' style={borderStylr}></div>
             <Documents style={documentsStyle} data={this.state.documentData} />
         </div>
 

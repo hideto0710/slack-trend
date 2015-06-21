@@ -8,3 +8,7 @@ body {
 .height100 {
     height: 100%;
 }
+
+.borderBottom1 {
+    border-bottom: 1px groove #99CCFF;
+}
