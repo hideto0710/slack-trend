@@ -38,8 +38,11 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
+    "lodash": "^3.9.3",
     "material-ui": "^0.9.1",
+    "moment": "^2.10.3",
     "react": "^0.13.1",
+    "react-highcharts": "^1.0.1",
     "react-tap-event-plugin": "^0.1.7"
   }
 }

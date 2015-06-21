@@ -10,9 +10,8 @@ injectTapEventPlugin();
 AppBar = materialUi.AppBar
 Dialog = materialUi.Dialog
 
+Contents = require './components/Contents.cjsx'
 FileFolder = require './components/FileFolder.cjsx'
-Timer = require './components/Timer.cjsx'
-TrendArea = require './components/TrendArea.cjsx'
 
 mountNode = document.getElementById 'app'
 
@@ -26,18 +25,25 @@ SlackTrendApp = React.createClass(
         {muiTheme: ThemeManager.getCurrentTheme()}
 
     getInitialState: ->
-        {conversation: []}
+        {conversation: [], conversationName: ''}
 
-    handleStandardDialogTouchTap: (e) ->
+    render: ->
+        <div className="height100" onDragOver={this._handleDragOver} onDrop={this._handleFileSelect}>
+            <AppBar title="SlackTrend" iconElementLeft={<FileFolder onTouchTap={this._handleFileLoadTouchTap} />} />
+            <input type="file" style={{display: 'none'}} ref="fileInput" onChange={this._handleFileSelect} />
+            <Contents conversation={this.state.conversation} conversationName={this.state.conversationName} />
+        </div>
+
+    _handleFileLoadTouchTap: (e) ->
         React.findDOMNode(this.refs.fileInput).click()
 
-    handleDragOver: (e) ->
+    _handleDragOver: (e) ->
         # TODO:アクションを追加したい
         e.stopPropagation()
         e.preventDefault()
         e.dataTransfer.dropEffect = 'copy'
 
-    handleFileSelect: (e) ->
+    _handleFileSelect: (e) ->
         e.stopPropagation()
         e.preventDefault()
         # D&DもしくはFile読み込みで分岐
@@ -50,15 +56,6 @@ SlackTrendApp = React.createClass(
         # Fileオブジェクトを読み込み
         this._readFile file for i, file of files when file instanceof File
 
-    render: ->
-        <div className="height100" onDragOver={this.handleDragOver} onDrop={this.handleFileSelect}>
-            <AppBar title="SlackTrend" iconElementLeft={<FileFolder onTouchTap={this.handleStandardDialogTouchTap} />} />
-            <input type="file" style={{display: 'none'}} ref="fileInput" onChange={this.handleFileSelect} />
-            <Timer />
-            <TrendArea conversation={this.state.conversation} />
-        </div>
-
-
     _readFile: (file) ->
         self = this
         # TODO:対応形式を増やす
@@ -66,12 +63,11 @@ SlackTrendApp = React.createClass(
             reader = new FileReader()
             reader.onload = (e) ->
                 dataArray = e.target.result.split(/\r\n|\r|\n/)
-                console.log JSON.parse dataArray[0]
                 # 行毎にパース
                 conversation =  for item in dataArray when item isnt ''
                     JSON.parse item if item isnt ''
                 # FIXME:複数ファイルの場合の上書きを回避
-                self.setState({conversation: conversation})
+                self.setState({conversation: conversation, conversationName: file.name.replace '.log', ''})
             reader.readAsText(file)
         else
             alert 'not text file.'

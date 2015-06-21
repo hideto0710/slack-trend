@@ -11,6 +11,7 @@ SvgIcon = materialUi.SvgIcon
 ActionAssignment = require './svg-icons/ActionAssignment.cjsx'
 
 FileFolder = React.createClass(
+    displayName: 'FileFolder'
 
     propTypes:
         onTouchTap: React.PropTypes.func
@@ -19,7 +20,7 @@ FileFolder = React.createClass(
         iconStyle =
             margin: -8
 
-        <IconButton onTouchTap={this.props.onTouchTap} tooltip="Load File">
+        <IconButton style={{zIndex: 10}} onTouchTap={this.props.onTouchTap} tooltip="Load File">
             <Avatar icon={<ActionAssignment />} backgroundColor={Colors.blue500} style={iconStyle} />
         </IconButton>
 )
