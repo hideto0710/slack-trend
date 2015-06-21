@@ -17,6 +17,7 @@ gulp.task 'scripts', ->
     entries: ['./src/scripts/main.cjsx']
     transform: [coffee_reactify]
     insertGlobals: true
+    debug: true
     cache: {}
     packageCache: {}
     fullPaths: true

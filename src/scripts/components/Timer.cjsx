@@ -1,12 +1,12 @@
 
-React = require 'react';
+React = require 'react'
 
 Timer = React.createClass(
     getInitialState: ->
-        { secondsElapsed: 0 }
+        {secondsElapsed: 0}
 
     tick: ->
-        this.setState({ secondsElapsed: this.state.secondsElapsed + 1 })
+        this.setState({secondsElapsed: this.state.secondsElapsed + 1})
 
     componentDidMount: ->
         this.interval = setInterval(this.tick, 1000)
@@ -15,9 +15,7 @@ Timer = React.createClass(
         clearInterval(this.interval)
 
     render: ->
-        (
-            <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
-        )
+        <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
 )
 
 module.exports = Timer
