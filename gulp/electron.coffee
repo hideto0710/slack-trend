@@ -13,7 +13,7 @@ gulp.task 'electron', ->
     'app-version': 'Version 0.1.0'
   , (err, path) ->
   )
-  packager(
+  ###packager(
     dir: '.'
     out: 'release/win32'
     name: 'SlackTrend'
@@ -22,4 +22,4 @@ gulp.task 'electron', ->
     version: '0.28.0'
     'app-version': 'Version 0.1.0'
   , (err, path) ->
-  )
+  )###
