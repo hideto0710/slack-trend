@@ -4,10 +4,19 @@ slack_trend
 ##概要
 [slack_stocker](https://git.emining.jp/gitbucket/t.sakaki/slack_stocker)で生成したファイルからトレンドを表示するデスクトップアプリケーション。
 
+###使用方法
+
+1. ファイルをドラッグ＆ドロップ、または左上のアイコンからファイルを選択することでグラフを表示
+1. グラフ上の任意の点をクリックすることで指定期間の本文を表示
+
+###プロジェクトについて
+
 + Electronで作成
 + CoffeeScriptとJSXで記述
 + viewのコンポーネントとしてReactをを使用
 + タスク自動化ツールにgulp.jsを使用
+
+### デモ
 
 ![SlackTrend](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/demo/Screenshot_v0.1.0.png?raw=true)
 
