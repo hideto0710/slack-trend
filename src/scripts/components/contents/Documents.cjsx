@@ -1,5 +1,8 @@
 
 clipboard = electronRequire 'clipboard'
+remote = electronRequire 'remote'
+Menu = remote.require 'menu'
+MenuItem = remote.require 'menu-item'
 
 React = require 'react';
 materialUi = require 'material-ui'
@@ -38,8 +41,13 @@ Documents = React.createClass(
             {itemNodes}
         </List>
 
-
     _handlItemTouchTap: (e) ->
+        self = this
+        menu = new Menu()
+        menu.append(new MenuItem({label: 'Copy link', click: -> self._copyToClipboard(e)}))
+        menu.popup(remote.getCurrentWindow())
+
+    _copyToClipboard: (e) ->
         touchId = e._dispatchIDs.match(/\$(\d+$)/)[1]
         clipboard.writeText this.props.data[touchId].url
 )
