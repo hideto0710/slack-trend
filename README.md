@@ -5,7 +5,7 @@ slack_trend
 [slack_stocker](https://git.emining.jp/gitbucket/t.sakaki/slack_stocker)で生成したファイルからトレンドを表示するデスクトップアプリケーション。
 
 ###ダウンロード
-+ [Window版](https://hottolink.box.com/s/tqyrvpeh34w9fqv5e19j5ipcohzzj8mc)
++ [Window版](https://hottolink.box.com/s/7y0ox3pvvhddkyif0mjc8efdk489zl13)
 + [Mac版](https://hottolink.box.com/s/ad2nmutcu4rlp3875nqth72u0btmnoqn)
 + [サンプルファイル](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/dist/random.log?raw=true)
 
