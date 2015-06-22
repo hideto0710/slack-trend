@@ -10,6 +10,8 @@ gulp.task 'electron:darwin', ->
     arch: 'x64'
     platform: 'darwin'
     version: '0.28.2'
+    ignore: 'node_modules/'
+    prune: true
     'app-version': 'Version 0.1.0'
   , (err, path) ->
   )
@@ -22,6 +24,8 @@ gulp.task 'electron:win32', ->
     arch: 'x64'
     platform: 'win32'
     version: '0.28.2'
+    ignore: 'node_modules/'
+    prune: true
     'app-version': 'Version 0.1.0'
   , (err, path) ->
   )
