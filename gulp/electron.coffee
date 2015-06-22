@@ -11,6 +11,7 @@ gulp.task 'electron:darwin', ->
     platform: 'darwin'
     version: '0.28.2'
     ignore: 'node_modules/'
+    icon: 'dist/SlackTrend.icns'
     prune: true
     'app-version': 'Version 0.1.0'
   , (err, path) ->

@@ -6,7 +6,7 @@ slack_trend
 
 ###ダウンロード
 + [Window版](https://hottolink.box.com/s/mexosryi4ia8o9shgw5r46mdsm2im3lc)
-+ [Mac版](https://hottolink.box.com/s/lzxmd14661erufzpyp8ggrdgda0u1nvb)
++ [Mac版](https://hottolink.box.com/s/ad2nmutcu4rlp3875nqth72u0btmnoqn)
 
 ###使用方法
 
