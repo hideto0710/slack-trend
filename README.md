@@ -7,6 +7,7 @@ slack_trend
 ###ダウンロード
 + [Window版](https://hottolink.box.com/s/mexosryi4ia8o9shgw5r46mdsm2im3lc)
 + [Mac版](https://hottolink.box.com/s/ad2nmutcu4rlp3875nqth72u0btmnoqn)
++ [サンプルファイル](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/dist/random.log?raw=true)
 
 ###使用方法
 
