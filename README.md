@@ -4,6 +4,10 @@ slack_trend
 ##概要
 [slack_stocker](https://git.emining.jp/gitbucket/t.sakaki/slack_stocker)で生成したファイルからトレンドを表示するデスクトップアプリケーション。
 
+###ダウンロード
++ [Window版](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/dist/SlackTrend-win32.zip?raw=true)
++ [Mac版](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/dist/SlackTrend-win32.zip?raw=true)
+
 ###使用方法
 
 1. ファイルをドラッグ＆ドロップ、または左上のアイコンからファイルを選択することでグラフを表示
@@ -18,7 +22,7 @@ slack_trend
 
 ### デモ
 
-![SlackTrend](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/demo/Screenshot_v0.1.0.png?raw=true)
+![SlackTrend](https://git.emining.jp/gitbucket/h.inamura/slack_trend/blob/master/dist/Screenshot.png?raw=true)
 
 ##開発環境
 
