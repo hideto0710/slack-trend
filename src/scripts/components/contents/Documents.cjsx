@@ -26,7 +26,7 @@ Documents = React.createClass(
 
         self = this
         itemNodes = this.props.data.map (item, i) ->
-            initialChar = item.author.charAt(0)
+            initialChar = item.author?.charAt(0)
 
             <ListItem key={i}
                 onTouchTap={self._handlItemTouchTap}
@@ -43,9 +43,11 @@ Documents = React.createClass(
 
     _handlItemTouchTap: (e) ->
         self = this
-        menu = new Menu()
-        menu.append(new MenuItem({label: 'Copy link', click: -> self._copyToClipboard(e)}))
-        menu.popup(remote.getCurrentWindow())
+        setTimeout ->
+            menu = new Menu()
+            menu.append(new MenuItem({label: 'Copy link', click: -> self._copyToClipboard(e)}))
+            menu.popup(remote.getCurrentWindow())
+        , 500
 
     _copyToClipboard: (e) ->
         touchId = e._dispatchIDs.match(/\$(\d+$)/)[1]

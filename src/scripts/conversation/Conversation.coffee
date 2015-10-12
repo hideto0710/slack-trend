@@ -34,7 +34,7 @@ class Conversation
          if moment(a.createdAt, DOCUMENT_FORMAT) < moment(b.createdAt, DOCUMENT_FORMAT) then -1 else 1
     )
 
-  getCategories: (interval = 3600) ->
+  getCategories: (interval = 3600 * 24) ->
     self = this
     timeStampArray = for item, i in @conversation
       self.getCreatedAt(i).valueOf()
@@ -43,7 +43,7 @@ class Conversation
     maxTime = moment _.max(timeStampArray)
 
     categoriesArray = []
-    categoryMoment = moment(minTime.startOf('hour'))
+    categoryMoment = moment(minTime.startOf('day'))
     loop
       categoriesArray.push categoryMoment.format(CATEGORY_FORMAT)
       categoryMoment.add(interval, 'second')
@@ -56,7 +56,7 @@ class Conversation
     trendHash = {}
     trendHash[category] = 0 for category in categories
     for doc, i in @conversation
-      trendHash[self.getCreatedAt(i).startOf('hour').format(CATEGORY_FORMAT)] += 1
+      trendHash[self.getCreatedAt(i).startOf('day').format(CATEGORY_FORMAT)] += 1
     for category, count of trendHash
       count
 

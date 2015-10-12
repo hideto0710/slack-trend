@@ -21,7 +21,7 @@ Contents = React.createClass(
         style: React.PropTypes.object
 
     getInitialState: ->
-        {documentData: [], interval: 3600}
+        {documentData: [], interval: 3600 * 24}
 
     render: ->
         style =
